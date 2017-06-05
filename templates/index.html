@@ -2,9 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>GuestBook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 </head>
-<body>
-hello for start API dffgrgdgdr dgg
+<body class=" grey lighten-3">
+
+<div class="container grey lighten-4">
+    <div class="row">
+        <h1 class="center-align">Simple GuestBook API</h1>
+        <h4 class="center-align">(json and xml)</h4>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col s12"><h3 class="center-align">JSON</h3>
+            <div>
+                <table class="striped">
+                    <tr>
+                        <td>GET</td>
+                        <td>http/gb.debos.net/api/guests/.json</td>
+                        <td></td>
+                        <td> get query all items</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>http/gb.debos.net/api/guests/ID.json</td>
+                        <td></td>
+                        <td> get item with id = ID</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>http/gb.debos.net/api/guests/.json</td>
+                        <td> {
+                            "email": "tra@exa.com",<br>
+                            "name": "any name1"
+                            }
+                        </td>
+                        <td>create new item</td>
+                    </tr>
+                    <tr>
+                        <td>PUT</td>
+                        <td>http/gb.debos.net/api/guests/ID.json</td>
+                        <td>{
+                            "id":ID,<br>
+                            "email": "tra@exa.com",<br>
+                            "name": "any name1"
+                            }
+                        </td>
+                        <td> update item with id = ID</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>http/gb.debos.net/api/guests/ID.json</td>
+                        <td></td>
+                        <td>delete item with id = ID</td>
+                    </tr>
+                </table>
+                <div class="row center-align">For XML-request change <strong>.json</strong> suffix to
+                    <strong>.xml</strong><br> Also change <strong>Content-Type</strong> from
+                    <strong>application/json</strong> to <strong>application/xml</strong></div>
+            </div>
+            <div>
+                <div class="postman-run-button"
+                     data-postman-action="collection/import"
+                     data-postman-var-1="fb7cfe561ddfa5008f18"></div>
+                <script type="text/javascript">
+                    (function (p, o, s, t, m, a, n) {
+                        !p[s] && (p[s] = function () {
+                            (p[t] || (p[t] = [])).push(arguments);
+                        });
+                        !o.getElementById(s + t) && o.getElementsByTagName("head")[0].appendChild((
+                            (n = o.createElement("script")),
+                                (n.id = s + t), (n.async = 1), (n.src = m), n
+                        ));
+                    }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+                </script>
+            </div>
+        </div>
+
+    </div>
+</div>
 </body>
 </html>
