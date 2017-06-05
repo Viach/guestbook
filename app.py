@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_restful import Api
-from guestbook.models import db, GuestJSONAPI, GuestXMLAPI
+from models import db, GuestJSONAPI, GuestXMLAPI
 
 app = Flask(__name__)
 app.config.from_pyfile('setup.py')
