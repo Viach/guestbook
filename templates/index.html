@@ -3,100 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <title>GuestBook</title>
-    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='guestbook.css') }}">
-    <!-- Latest compiled and minified CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type=text/css href="../static/guestbook.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.3/vue-resource.js"></script>
+
 </head>
 <body>
+<div id="app">
+    <br>
+    <div class="container">
+        <div class="row text-center">
+            <h1 class="">Simple GuestBook API <span class=""> (json and xml)</span></h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h3 class="text-center">
+                    JSON Request examples
+                </h3>
+                <table class="">
+                    <tr>
+                        <td>GET</td>
+                        <td>http/gb.debos.net/api/guests/.json</td>
+                        <td></td>
+                        <td> get query all items</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>http/gb.debos.net/api/guests/ID.json</td>
+                        <td></td>
+                        <td> get item with id = ID</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>http/gb.debos.net/api/guests/.json</td>
+                        <td> {
+                            "email": "tra@exa.com",<br>
+                            "name": "any name1"
+                            }
+                        </td>
+                        <td>create new item</td>
+                    </tr>
+                    <tr>
+                        <td>PUT</td>
+                        <td>http/gb.debos.net/api/guests/ID.json</td>
+                        <td>{
+                            "id":ID,<br>
+                            "email": "tra@exa.com",<br>
+                            "name": "any name1"
+                            }
+                        </td>
+                        <td> update item with id = ID</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>http/gb.debos.net/api/guests/ID.json</td>
+                        <td></td>
+                        <td>delete item with id = ID</td>
+                    </tr>
+                </table>
+                <hr>
+                <div class="row text-center">
+                    <div class="pull-left">
+                        <div class="postman-run-button"
+                             data-postman-action="collection/import"
+                             data-postman-var-1="fb7cfe561ddfa5008f18"></div>
+                        <script type="text/javascript">
+                            (function (p, o, s, t, m, a, n) {
+                                !p[s] && (p[s] = function () {
+                                    (p[t] || (p[t] = [])).push(arguments);
+                                });
+                                !o.getElementById(s + t) && o.getElementsByTagName("head")[0].appendChild((
+                                    (n = o.createElement("script")),
+                                        (n.id = s + t), (n.async = 1), (n.src = m), n
+                                ));
+                            }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+                        </script>
+                    </div>
+                    <div>For XML-request change <strong>.json</strong> suffix to
+                        <strong>.xml</strong><br> Also change <strong>Content-Type</strong> from
+                        <strong>application/json</strong> to <strong>application/xml</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div id="gb" class="">
+                    <h3 class="text-center ">GuestBook</h3>
+                    <div>
+                        <table class="table table-striped table-hover table-condensed">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% raw %}
+    <div>
+        <p>{{ message }}</p>
+        <input v-model="message">
+    </div>
+    {% endraw %}
 
-<div class="container">
-    <div class="row text-center">
-        <h1 class="">Simple GuestBook API <span class=""> (json and xml)</span></h1>
-    </div>
 </div>
-<div class="container">
-    <div class="col-md-7">
-        <h3 class="text-center">JSON</h3>
-        <div>
-            <table class="">
-                <tr>
-                    <td>GET</td>
-                    <td>http/gb.debos.net/api/guests/.json</td>
-                    <td></td>
-                    <td> get query all items</td>
-                </tr>
-                <tr>
-                    <td>GET</td>
-                    <td>http/gb.debos.net/api/guests/ID.json</td>
-                    <td></td>
-                    <td> get item with id = ID</td>
-                </tr>
-                <tr>
-                    <td>POST</td>
-                    <td>http/gb.debos.net/api/guests/.json</td>
-                    <td> {
-                        "email": "tra@exa.com",<br>
-                        "name": "any name1"
-                        }
-                    </td>
-                    <td>create new item</td>
-                </tr>
-                <tr>
-                    <td>PUT</td>
-                    <td>http/gb.debos.net/api/guests/ID.json</td>
-                    <td>{
-                        "id":ID,<br>
-                        "email": "tra@exa.com",<br>
-                        "name": "any name1"
-                        }
-                    </td>
-                    <td> update item with id = ID</td>
-                </tr>
-                <tr>
-                    <td>DELETE</td>
-                    <td>http/gb.debos.net/api/guests/ID.json</td>
-                    <td></td>
-                    <td>delete item with id = ID</td>
-                </tr>
-            </table>
-            <div class="row text-center">For XML-request change <strong>.json</strong> suffix to
-                <strong>.xml</strong><br> Also change <strong>Content-Type</strong> from
-                <strong>application/json</strong> to <strong>application/xml</strong></div>
-        </div>
-        <div>
-            <div class="postman-run-button"
-                 data-postman-action="collection/import"
-                 data-postman-var-1="fb7cfe561ddfa5008f18"></div>
-            <script type="text/javascript">
-                (function (p, o, s, t, m, a, n) {
-                    !p[s] && (p[s] = function () {
-                        (p[t] || (p[t] = [])).push(arguments);
-                    });
-                    !o.getElementById(s + t) && o.getElementsByTagName("head")[0].appendChild((
-                        (n = o.createElement("script")),
-                            (n.id = s + t), (n.async = 1), (n.src = m), n
-                    ));
-                }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
-            </script>
-        </div>
-    </div>
-    <div class="col-md-5">
-        <div class=" ">
-            <h3 class=" ">GuestBook</h3>
-        </div>
-    </div>
-</div>
-
 
 </body>
+<script src="../static/guestbook.js"></script>
 </html>
