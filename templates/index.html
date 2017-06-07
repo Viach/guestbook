@@ -11,10 +11,6 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <link rel="stylesheet" type=text/css href="../static/guestbook.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -32,7 +28,7 @@
                 <h3 class="text-center">
                     JSON Request examples
                 </h3>
-                <table class="">
+                <table class="table">
                     <tr>
                         <td>GET</td>
                         <td>http/gb.debos.net/api/guests/.json</td>
@@ -115,15 +111,24 @@
                                 <td>{{ guest.id }}</td>
                                 <td>{{ guest.name }}</td>
                                 <td>
-                                    <button v-on:click="showGuest(guest)">old show</button>
-                                    <button id="show-modal" @click="showModal = true; guestModal = guest">Show</button>
-                                    <modal v-if="showModal" @close="showModal = false" v-bind:message="guestModal"></modal>
-                                    <button v-on:click="editGuest(guest)">edit</button>
-                                    <button v-on:click="delGuest(guest)">Del</button>
+                                    <button id="show-modal" class="btn btn-success btn-xs"
+                                            @click="showModal = true; guestModal = guest">
+                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                    </button>
+                                    <modal v-if="showModal" @close="showModal = false"
+                                           v-bind:message="guestModal"></modal>
+                                    <button id="edit-modal" class="btn btn-warning btn-xs"
+                                            @click="editModal = true; guestModal = guest"><span
+                                            class="glyphicon glyphicon-edit"></span></button>
+                                    <modal-edit v-if="editModal" @close="editModal = false"
+                                           v-bind:message="guestModal"></modal-edit>
+                                    <button class="btn btn-danger btn-xs" v-on:click="delGuest(guest)"><span
+                                            class="glyphicon glyphicon-remove"></span></button>
                                 </td>
                             </tr>
                             </tbody>
-                            <button v-on:click="getList()">Show All</button>
+                            <button class="btn btn-success btn-sm" v-on:click="getList()"><strong>Show All</strong>
+                            </button>
                         </table>
                     </div>
                     {% endraw %}
@@ -133,6 +138,7 @@
     </div>
 </div>
 {% include "modal.html" %}
+{% include "modal-edit.html" %}
 </body>
 <script src="../static/guestbook.js"></script>
 </html>
