@@ -110,25 +110,31 @@
                             <tr v-for="guest in guests">
                                 <td>{{ guest.id }}</td>
                                 <td>{{ guest.name }}</td>
-                                <td>
-                                    <button id="show-modal" class="btn btn-success btn-xs"
+                                <td class="pull-right">
+                                    <button  class="btn btn-success btn-xs"
                                             @click="showModal = true; guestModal = guest">
                                         <span class="glyphicon glyphicon-eye-open"></span>
                                     </button>
                                     <modal v-if="showModal" @close="showModal = false"
                                            v-bind:message="guestModal"></modal>
-                                    <button id="edit-modal" class="btn btn-warning btn-xs"
-                                            @click="editModal = true; guestModal = guest"><span
+                                    <button  class="btn btn-warning btn-xs"
+                                            @click="editModal = true; guestModal = guest; newguest = false"><span
                                             class="glyphicon glyphicon-edit"></span></button>
                                     <modal-edit v-if="editModal" @close="editModal = false"
-                                           v-bind:message="guestModal"></modal-edit>
-                                    <button class="btn btn-danger btn-xs" v-on:click="delGuest(guest)"><span
+                                                v-bind:message="guestModal" v-bind:newguest="newguest"></modal-edit>
+                                    <button  class="btn btn-danger btn-xs" v-on:click="delGuest(guest)"><span
                                             class="glyphicon glyphicon-remove"></span></button>
                                 </td>
                             </tr>
                             </tbody>
-                            <button class="btn btn-success btn-sm" v-on:click="getList()"><strong>Show All</strong>
+                            <button class="btn btn-success btn-sm pull-left" v-on:click="getList()"><strong>Show
+                                All</strong>
                             </button>
+                            <button class="btn btn-info btn-sm pull-right"
+                                    @click="editModal = true;guestModal = [];newguest = true"><strong>Add Guest</strong>
+                            </button>
+                            <modal-edit v-if="editModal" @close="editModal = false"
+                                        v-bind:newguest="newguest" v-bind:message="guestModal"></modal-edit>
                         </table>
                     </div>
                     {% endraw %}

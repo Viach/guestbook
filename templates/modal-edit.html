@@ -5,8 +5,7 @@
         <div class="modal-mask">
             <div class="modal-wrapper">
                 <div class="modal-container">
-
-                    <div class="modal-header">
+                    <div class="modal-header alert alert-info">
                         <slot name="header">
                             Enter data of Guest
                         </slot>
@@ -34,11 +33,16 @@
 
                     <div class="modal-footer">
                         <slot name="footer">
-                            <button class="modal-default-button pull-left" @click="$emit('close')">
+                            <button class="btn btn-warning pull-left" @click="$emit('close')">
                                 Close
                             </button>
-                            <button class="modal-default-button pull-right" @click="editGuest(message);$emit('close')">
+                            <button v-show="!newguest" class="btn btn-info pull-right"
+                                    @click="editGuest(message);$emit('close')">
                                 Send
+                            </button>
+                            <button v-show="newguest" class="btn btn-success pull-right"
+                                    @click="addGuest(message);$emit('close')">
+                                Add Guest
                             </button>
                         </slot>
                     </div>

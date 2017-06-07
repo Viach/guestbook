@@ -6,7 +6,7 @@
             <div class="modal-wrapper">
                 <div class="modal-container">
 
-                    <div class="modal-header">
+                    <div class="modal-header alert alert-success">
                         <slot name="header">
                             Guest
                         </slot>
@@ -34,8 +34,8 @@
 
                     <div class="modal-footer">
                         <slot name="footer">
-                            <button class="modal-default-button" @click="$emit('close')">
-                                OK
+                            <button class="btn btn-warning" @click="$emit('close')">
+                                Close
                             </button>
                         </slot>
                     </div>

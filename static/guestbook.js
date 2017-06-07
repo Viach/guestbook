@@ -9,7 +9,7 @@ Vue.component('modal', {
 
 Vue.component('modal-edit', {
     template: '#modal-edit-template',
-    props: ['message'],
+    props: ['message', 'newguest'],
     methods: {
         editGuest: function (guest) {
             axios.put('/api/guests/' + guest.id + '.json',
@@ -25,6 +25,19 @@ Vue.component('modal-edit', {
                 console.log(error);
             });
 
+        },
+        addGuest: function (guest) {
+            axios.post('/api/guests/.json',
+                {
+                    name: guest.name,
+                    email: guest.email
+                }
+            ).then(function (response) {
+                    this.guests = response.data.guests;
+                }.bind(this)
+            ).catch(function (error) {
+                console.log(error);
+            });
         }
     },
     created: function () {
@@ -37,6 +50,7 @@ new Vue({
     data: {
         guests: [],
         guestModal: [],
+        newguest: false,
         showModal: false,
         editModal: false
     },
