@@ -1,26 +1,58 @@
+// register modal component
+Vue.component('modal', {
+    template: '#modal-template'
+});
+
+
 new Vue({
     el: "#app",
     data: {
-        messa: [1,2,3]
+        guests: [],
+        showModal: false
     },
-
     methods: {
         getList: function () {
-            var myGet = axios.get('/api/guests/.json')
+            axios.get('/api/guests/.json')
                 .then(function (response) {
-                    console.log(response.status);
-                    return  response.data;
-                })
+                    this.guests = response.data.guests;
+                }.bind(this))
                 .catch(function (error) {
                     console.log(error);
                 });
-
+        },
+        showGuest: function (guest) {
+            alert('Guest info:\n' + guest.id + '\n' + guest.name + '\n' + guest.email);
+        },
+        editGuest: function (guest) {
+            axios.put('/api/guests/' + guest.id + '.json',
+                {
+                    id: guest.id,
+                    name: 'NEW',
+                    email: 'ENAIL'
+                }
+            )
+                .then(function (response) {
+                    this.guests = response.data.guests;
+                }.bind(this))
+                .catch(function (error) {
+                    console.log(error);
+                });
+            this.getList();
+        },
+        delGuest: function (guest) {
+            axios.delete('/api/guests/' + guest.id + '.json')
+                .then(function (response) {
+                    this.guests = response.data.guests;
+                }.bind(this))
+                .catch(function (error) {
+                    console.log(error);
+                });
+            this.getList();
         }
     },
-    created:function () {
+    created: function () {
         this.getList();
     }
-
-
 });
+
 
