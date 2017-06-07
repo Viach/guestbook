@@ -2,6 +2,9 @@
 Vue.component('modal', {
     template: '#modal-template',
     props: ['message'],
+    created: function () {
+        // alert();
+    }
 });
 
 
@@ -9,6 +12,7 @@ new Vue({
     el: "#app",
     data: {
         guests: [],
+        guestModal : [],
         showModal: false
     },
     methods: {

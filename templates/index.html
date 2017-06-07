@@ -115,25 +115,15 @@
                                 <td>{{ guest.id }}</td>
                                 <td>{{ guest.name }}</td>
                                 <td>
-                                    <button v-on:click="showGuest(guest)">Show</button>
+                                    <button v-on:click="showGuest(guest)">old show</button>
+                                    <button id="show-modal" @click="showModal = true; guestModal = guest">Show</button>
+                                    <modal v-if="showModal" @close="showModal = false" v-bind:message="guestModal"></modal>
                                     <button v-on:click="editGuest(guest)">edit</button>
                                     <button v-on:click="delGuest(guest)">Del</button>
                                 </td>
                             </tr>
                             </tbody>
                             <button v-on:click="getList()">Show All</button>
-                            <button id="show-modal" @click="showModal = true">Create new Guest</button>
-                                                    <div id="">
-                            <!-- use the modal component, pass in the prop -->
-                            <modal v-if="showModal" @close="showModal = false" v-bind:message="guests">
-                                <!--
-                                  you can use custom content here to overwrite
-                                  default content
-                                -->
-
-                                <h3 slot="header">custom header</h3>
-                            </modal>
-                        </div>
                         </table>
                     </div>
                     {% endraw %}
