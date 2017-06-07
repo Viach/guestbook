@@ -1,6 +1,7 @@
 // register modal component
 Vue.component('modal', {
-    template: '#modal-template'
+    template: '#modal-template',
+    props: ['message'],
 });
 
 
