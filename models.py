@@ -79,7 +79,7 @@ class GuestAPI(Resource):
             self.resp.data = "Deleted"
         except Exception as e:
             self.resp.status_code = 404
-            self.resp.data = "Error : "+str(e)
+            self.resp.data = "Error : " + str(e)
         finally:
             return self.resp
 
