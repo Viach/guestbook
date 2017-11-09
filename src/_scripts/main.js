@@ -1,12 +1,11 @@
-// Main javascript entry point
-// Should handle bootstrapping/starting application
+import './menu';
 
-'use strict';
+import Config from './settings/config';
 
-import $ from 'jquery';
-import Link from '../_modules/link/link';
+import Module1 from './test';
 
-$(() => {
-  new Link(); // Activate Link modules logic
-  console.log('Welcome to Yeogurt!');
-});
+console.log(Config);
+// =========================================
+// Initialization
+// =========================================
+Module1.init();

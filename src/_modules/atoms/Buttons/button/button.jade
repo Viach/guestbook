@@ -1,0 +1,11 @@
+mixin button(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  button.button(class=spec.__class)&attributes(attributes)
+    if (spec.type === 'icon')
+      +icon({__class:' button__icon',icon: spec.icon})
+    else if (spec.type === 'text')
+      .button__text= spec.text
+    
+

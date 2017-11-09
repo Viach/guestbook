@@ -2,6 +2,8 @@
 
 This "Modules" folder is designated for reusable pieces of code that are used within layouts and pages.
 
+Yeomas notify: atoms - like UI elements, molecules - like components, organisms - like containers for componentns.
+
 ## Example
 
 An example link module:

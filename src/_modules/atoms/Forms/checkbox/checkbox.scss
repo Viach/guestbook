@@ -1,0 +1,58 @@
+// checkbox styles
+.a-checkbox {
+  user-select: none;
+  &__input {
+    position: absolute;
+    opacity: 0;
+    &:hover ~ .a-checkbox__label:before {
+      background: #f35429;
+    }
+    &:focus ~ .a-checkbox__label:before {
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    }
+    &:checked ~ .a-checkbox__label:before {
+      background: #f35429;
+    }
+    &:checked ~ .a-checkbox__label:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 9px;
+      background: white;
+      width: 2px;
+      height: 2px;
+      box-shadow: 
+        2px 0 0 white,
+        4px 0 0 white,
+        4px -2px 0 white,
+        4px -4px 0 white,
+        4px -6px 0 white,
+        4px -8px 0 white;
+      transform: rotate(45deg);
+    }
+    &:disabled ~ .a-checkbox__label:before {
+      box-shadow: none;
+      background: #ddd;
+    }
+    &:disabled ~ .a-checkbox__label {
+      color: #b8b8b8;
+      cursor: default;
+    }
+  }
+  &__label {
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    &:before {
+      content: '';
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 20px;
+      height: 20px;
+      background: white;
+    }
+  }
+}

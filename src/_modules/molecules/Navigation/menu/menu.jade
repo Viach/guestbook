@@ -1,0 +1,9 @@
+mixin menu(spec)
+  - spec = spec || {}
+
+  nav.menu(class=spec.__class)&attributes(attributes)
+    +icon({ '__class': '__icon', icon: 'happy' })
+    //- a(href='#' class=site.data.pages.main === spec.active && 'menu__item--active').menu__item Home
+    //- a(href='#' class=site.data.pages.about === spec.active && 'menu__item--active').menu__item About
+    +input
+    +checkbox({ '__class': '__checkbox', text: 'my', id: 'chk-1' })

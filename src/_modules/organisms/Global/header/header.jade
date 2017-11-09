@@ -1,0 +1,7 @@
+mixin header(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  div(class=spec.__class).header&attributes(attributes)
+    +menu({ active: currentPage, filled: true })
+    +icon({ '__class': '__icon', icon: 'happy' })

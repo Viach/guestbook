@@ -1,0 +1,8 @@
+mixin checkbox(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+  - myArray = site.data.some
+
+  div(class=spec.__class).a-checkbox&attributes(attributes)
+    input(type="checkbox" id=spec.id name=spec.name disabled=spec.disabled).a-checkbox__input.js-checkbox
+    label(for=spec.id).a-checkbox__label test

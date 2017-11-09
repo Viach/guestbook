@@ -1,0 +1,27 @@
+@mixin backgroundContainCenter {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin backgroundCoverCenter {
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin limitText($lines, $lineHeight) {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: $lines;
+   line-height: $lineHeight;
+   max-height: $lineHeight * $lines;
+}

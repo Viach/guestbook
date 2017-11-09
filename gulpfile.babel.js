@@ -15,7 +15,7 @@ const defaultNotification = function(err) {
   return {
     subtitle: err.plugin,
     message: err.message,
-    sound: 'Funk',
+    sound: 'Sosumi',
     onLast: true,
   };
 };
@@ -46,20 +46,24 @@ gulp.task('default', ['clean'], () => {
 gulp.task('build', [
   'copy',
   'imagemin',
+  'svg-icons',
   'jade',
   'sass',
-  'browserify'
+  'scripts',
+  'libraries'
 ]);
 
 // Server tasks with watch
 gulp.task('serve', [
   'imagemin',
+  'svg-icons',
   'copy',
   'jade',
   'sass',
-  'browserify',
   'browserSync',
-  'watch'
+  'watch',
+  'scripts',
+  'libraries'
 ]);
 
 // Testing

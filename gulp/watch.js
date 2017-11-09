@@ -32,6 +32,16 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync) {
         path.join(dirs.source, dirs.images, '**/*.{jpg,jpeg,gif,svg,png}')
       ], ['imagemin']);
 
+      // Scripts
+      gulp.watch([
+        path.join(dirs.source, dirs.scripts, '**/*.js')
+      ], ['scripts']);
+
+      // Libraries
+      gulp.watch([
+        path.join(dirs.source, dirs.libraries, '**/*.js')
+      ], ['libraries']);
+
       // All other files
       gulp.watch([
         path.join(dirs.temporary, '**/*'),

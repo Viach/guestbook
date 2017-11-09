@@ -1,0 +1,8 @@
+mixin section-examples(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .section-examples(class=spec.__class)&attributes(attributes)
+    h2.section-examples__title JSON Request examples
+    +examples({__class:'section-examples__examples',})
+    

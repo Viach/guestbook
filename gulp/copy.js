@@ -14,6 +14,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync) {
       '!' + path.join(dirs.source, '**/*.jade')
     ])
     .pipe(plugins.changed(dest))
-    .pipe(gulp.dest(dest));
+    .pipe(gulp.dest(dest))
+    .pipe(browserSync.stream({match: '**/*.js'}));
   });
 }

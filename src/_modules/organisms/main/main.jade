@@ -1,0 +1,9 @@
+mixin main(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .main.container(class=spec.__class)&attributes(attributes)
+    .row
+      h1.main__title.col-12 Simple GuestBook API (json and xml)
+      +section-examples({__class:'main__section-examples col-md-6',})
+      +section-book({__class:'main__section-book col-md-6',})

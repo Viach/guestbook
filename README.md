@@ -1,7 +1,10 @@
-# Guestbook readme
+# Template readme
 
-Generated on 2017-11-06 using
-[generator-yeogurt@2.0.1](https://github.com/larsonjj/generator-yeogurt)
+Yeomas - based on yeogurt generator.
+
+What's new:
+  - added svg-sprite system
+[generator-yeogurt@2.0.0](https://github.com/larsonjj/generator-yeogurt)
 
 ## Description
 
@@ -37,11 +40,30 @@ Code Management
 - [Editorconfig](http://editorconfig.org/)
 - [Git](https://git-scm.com/)
 
+## Short commands (Yeomas notice)
+
+For use commands install YEOMAN.
+
+I using atomic design, so this commands for me:
+
+Modules
+`yo yeogurt:module --atomic=atom <your module name>`: create atom module (like UI element)
+`yo yeogurt:module --atomic=molecule <your module name>`: create molecule module (like component)
+`yo yeogurt:module --atomic=organism <your module name>`: create organism module (like container)
+
+Other
+`yo yeogurt:page <your page name>`: create page
+`yo yeogurt:layout <your layout name>`: create layout
+`yo yeogurt:page <your page name> --layout=<your layout name>`: create page with special layout
 
 ## Automated tasks
 
 This project uses [Gulp](http://gulpjs.com) to run automated tasks for development and production builds.
 The tasks are as follows:
+
+If you using npm:
+`npm run dev`: for development
+`npm run build`: for production
 
 `gulp --production`: Same as `gulp serve --production` also run `gulp test` and  not boot up production server
 

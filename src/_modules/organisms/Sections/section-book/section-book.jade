@@ -1,0 +1,10 @@
+mixin section-book(spec)
+  - spec = spec || {}
+  - spec.__class = spec.__class || ''
+
+  .section-book(class=spec.__class)&attributes(attributes)
+    h2.section-book__title Guest Book
+    .section-book__buttons
+      +button({__class:'section-book__button', type:'text', text: 'Show All' })
+      +button({__class:'section-book__button', type:'text', text: 'Add Guest' })
+    +book({__class:'section-book__book'})

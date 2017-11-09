@@ -1,0 +1,370 @@
+////////////////////////////////////
+//Alpha
+////////////////////////////////////
+$a-0-1: 0.1;
+$a-0-2: 0.2;
+$a-0-3: 0.3;
+$a-0-4: 0.4;
+$a-0-5: 0.5;
+$a-0-6: 0.6;
+$a-0-7: 0.7;
+$a-0-8: 0.8;
+$a-0-9: 0.9;
+$a-1: 1;
+
+
+//------------------------------
+// Colors
+//------------------------------
+$c-dark: #222222;
+$c-white: #ffffff;
+
+//------------------------------
+// transitions & Easing
+//------------------------------
+$t-normal: .35s;
+
+//------------------------------
+// Media Breakpoints
+//------------------------------
+
+// Mobile first
+$screenMin: "screen and (min-width : 1200px)";
+$desktopMin: "screen and (min-width : 992px)";
+$tabletMin: "screen and (min-width : 768px)";
+$phoneMin: "screen and (min-width : 480px)";
+$iPhoneMin: "screen and (min-width : 0px)";
+
+// Desktop first method
+$screen: "screen and (max-width : 1200px)";
+$desktop: "screen and (max-width : 992px)";
+$tablet: "screen and (max-width : 768px)";
+$phone: "screen and (max-width : 480px)";
+$iPhone: "screen and (max-width : 320px)";
+
+//------------------------------
+// Font sizes
+//------------------------------
+$fs-1: 1px;
+$fs-2: 2px;
+$fs-3: 3px;
+$fs-4: 4px;
+$fs-5: 5px;
+$fs-6: 6px;
+$fs-7: 7px;
+$fs-8: 8px;
+$fs-9: 9px;
+$fs-10: 10px;
+$fs-11: 11px;
+$fs-12: 12px;
+$fs-13: 13px;
+$fs-14: 14px;
+$fs-15: 15px;
+$fs-16: 16px;
+$fs-17: 17px;
+$fs-18: 18px;
+$fs-19: 19px;
+$fs-20: 20px;
+$fs-21: 21px;
+$fs-22: 22px;
+$fs-23: 23px;
+$fs-24: 24px;
+$fs-25: 25px;
+$fs-26: 26px;
+$fs-27: 27px;
+$fs-28: 28px;
+$fs-29: 29px;
+$fs-30: 30px;
+$fs-31: 31px;
+$fs-32: 32px;
+$fs-33: 33px;
+$fs-34: 34px;
+$fs-35: 35px;
+$fs-36: 36px;
+$fs-37: 37px;
+$fs-38: 38px;
+$fs-39: 39px;
+$fs-40: 40px;
+$fs-41: 41px;
+$fs-42: 42px;
+$fs-43: 43px;
+$fs-44: 44px;
+$fs-45: 45px;
+$fs-46: 46px;
+$fs-47: 47px;
+$fs-48: 48px;
+$fs-49: 49px;
+$fs-50: 50px;
+$fs-51: 51px;
+$fs-52: 52px;
+$fs-53: 53px;
+$fs-54: 54px;
+$fs-55: 55px;
+$fs-56: 56px;
+$fs-57: 57px;
+$fs-58: 58px;
+$fs-59: 59px;
+$fs-60: 60px;
+$fs-61: 61px;
+$fs-62: 62px;
+$fs-63: 63px;
+$fs-64: 64px;
+$fs-65: 65px;
+$fs-66: 66px;
+$fs-67: 67px;
+$fs-68: 68px;
+$fs-69: 69px;
+$fs-70: 70px;
+$fs-71: 71px;
+$fs-72: 72px;
+$fs-73: 73px;
+$fs-74: 74px;
+$fs-75: 75px;
+$fs-76: 76px;
+$fs-77: 77px;
+$fs-78: 78px;
+$fs-79: 79px;
+$fs-80: 80px;
+$fs-81: 81px;
+$fs-82: 82px;
+$fs-83: 83px;
+$fs-84: 84px;
+$fs-85: 85px;
+$fs-86: 86px;
+$fs-87: 87px;
+$fs-88: 88px;
+$fs-89: 89px;
+$fs-90: 90px;
+$fs-91: 91px;
+$fs-92: 92px;
+$fs-93: 93px;
+$fs-94: 94px;
+$fs-95: 95px;
+$fs-96: 96px;
+$fs-97: 97px;
+$fs-98: 98px;
+$fs-99: 99px;
+$fs-100: 100px;
+$fs-101: 101px;
+$fs-102: 102px;
+$fs-103: 103px;
+$fs-104: 104px;
+$fs-105: 105px;
+$fs-106: 106px;
+$fs-107: 107px;
+$fs-108: 108px;
+$fs-109: 109px;
+$fs-110: 110px;
+$fs-111: 111px;
+$fs-112: 112px;
+$fs-113: 113px;
+$fs-114: 114px;
+$fs-115: 115px;
+$fs-116: 116px;
+$fs-117: 117px;
+$fs-118: 118px;
+$fs-119: 119px;
+$fs-120: 120px;
+$fs-121: 121px;
+$fs-122: 122px;
+$fs-123: 123px;
+$fs-124: 124px;
+$fs-125: 125px;
+$fs-126: 126px;
+$fs-127: 127px;
+$fs-128: 128px;
+$fs-129: 129px;
+$fs-130: 130px;
+$fs-131: 131px;
+$fs-132: 132px;
+$fs-133: 133px;
+$fs-134: 134px;
+$fs-135: 135px;
+$fs-136: 136px;
+$fs-137: 137px;
+$fs-138: 138px;
+$fs-139: 139px;
+$fs-140: 140px;
+$fs-141: 141px;
+$fs-142: 142px;
+$fs-143: 143px;
+$fs-144: 144px;
+$fs-145: 145px;
+$fs-146: 146px;
+$fs-147: 147px;
+$fs-148: 148px;
+$fs-149: 149px;
+$fs-150: 150px;
+
+//------------------------------
+// Font size icons
+//------------------------------
+$fs-icon-1: 1px;
+$fs-icon-2: 2px;
+$fs-icon-3: 3px;
+$fs-icon-4: 4px;
+$fs-icon-5: 5px;
+$fs-icon-6: 6px;
+$fs-icon-7: 7px;
+$fs-icon-8: 8px;
+$fs-icon-9: 9px;
+$fs-icon-10: 10px;
+$fs-icon-11: 11px;
+$fs-icon-12: 12px;
+$fs-icon-13: 13px;
+$fs-icon-14: 14px;
+$fs-icon-15: 15px;
+$fs-icon-16: 16px;
+$fs-icon-17: 17px;
+$fs-icon-18: 18px;
+$fs-icon-19: 19px;
+$fs-icon-20: 20px;
+$fs-icon-21: 21px;
+$fs-icon-22: 22px;
+$fs-icon-23: 23px;
+$fs-icon-24: 24px;
+$fs-icon-25: 25px;
+$fs-icon-26: 26px;
+$fs-icon-27: 27px;
+$fs-icon-28: 28px;
+$fs-icon-29: 29px;
+$fs-icon-30: 30px;
+$fs-icon-31: 31px;
+$fs-icon-32: 32px;
+$fs-icon-33: 33px;
+$fs-icon-34: 34px;
+$fs-icon-35: 35px;
+$fs-icon-36: 36px;
+$fs-icon-37: 37px;
+$fs-icon-38: 38px;
+$fs-icon-39: 39px;
+$fs-icon-40: 40px;
+$fs-icon-41: 41px;
+$fs-icon-42: 42px;
+$fs-icon-43: 43px;
+$fs-icon-44: 44px;
+$fs-icon-45: 45px;
+$fs-icon-46: 46px;
+$fs-icon-47: 47px;
+$fs-icon-48: 48px;
+$fs-icon-49: 49px;
+$fs-icon-50: 50px;
+$fs-icon-51: 51px;
+$fs-icon-52: 52px;
+$fs-icon-53: 53px;
+$fs-icon-54: 54px;
+$fs-icon-55: 55px;
+$fs-icon-56: 56px;
+$fs-icon-57: 57px;
+$fs-icon-58: 58px;
+$fs-icon-59: 59px;
+$fs-icon-60: 60px;
+$fs-icon-61: 61px;
+$fs-icon-62: 62px;
+$fs-icon-63: 63px;
+$fs-icon-64: 64px;
+$fs-icon-65: 65px;
+$fs-icon-66: 66px;
+$fs-icon-67: 67px;
+$fs-icon-68: 68px;
+$fs-icon-69: 69px;
+$fs-icon-70: 70px;
+$fs-icon-71: 71px;
+$fs-icon-72: 72px;
+$fs-icon-73: 73px;
+$fs-icon-74: 74px;
+$fs-icon-75: 75px;
+$fs-icon-76: 76px;
+$fs-icon-77: 77px;
+$fs-icon-78: 78px;
+$fs-icon-79: 79px;
+$fs-icon-80: 80px;
+$fs-icon-81: 81px;
+$fs-icon-82: 82px;
+$fs-icon-83: 83px;
+$fs-icon-84: 84px;
+$fs-icon-85: 85px;
+$fs-icon-86: 86px;
+$fs-icon-87: 87px;
+$fs-icon-88: 88px;
+$fs-icon-89: 89px;
+$fs-icon-90: 90px;
+$fs-icon-91: 91px;
+$fs-icon-92: 92px;
+$fs-icon-93: 93px;
+$fs-icon-94: 94px;
+$fs-icon-95: 95px;
+$fs-icon-96: 96px;
+$fs-icon-97: 97px;
+$fs-icon-98: 98px;
+$fs-icon-99: 99px;
+
+//------------------------------
+// Font weight
+//------------------------------
+$fw-light: 300;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-normal: 400;
+$fw-extrabold: 800;
+
+//------------------------------
+// Line height
+//------------------------------
+$lh-0-0: 0.0;
+$lh-0-1: 0.1;
+$lh-0-2: 0.2;
+$lh-0-3: 0.3;
+$lh-0-4: 0.4;
+$lh-0-5: 0.5;
+$lh-0-6: 0.6;
+$lh-0-7: 0.7;
+$lh-0-8: 0.8;
+$lh-0-9: 0.9;
+$lh-1-0: 1.0;
+$lh-1-1: 1.1;
+$lh-1-2: 1.2;
+$lh-1-3: 1.3;
+$lh-1-4: 1.4;
+$lh-1-5: 1.5;
+$lh-1-6: 1.6;
+$lh-1-7: 1.7;
+$lh-1-8: 1.8;
+$lh-1-9: 1.9;
+$lh-2-0: 2.0;
+
+//------------------------------
+// Letter spacing
+//------------------------------
+$ls-0-0: 0.0em;
+$ls-0-1: 0.1em;
+$ls-0-2: 0.2em;
+$ls-0-3: 0.3em;
+$ls-0-4: 0.4em;
+$ls-0-5: 0.5em;
+$ls-0-6: 0.6em;
+$ls-0-7: 0.7em;
+$ls-0-8: 0.8em;
+$ls-0-9: 0.9em;
+$ls-1-0: 1.0em;
+$ls-1-1: 1.1em;
+$ls-1-2: 1.2em;
+$ls-1-3: 1.3em;
+$ls-1-4: 1.4em;
+$ls-1-5: 1.5em;
+$ls-1-6: 1.6em;
+$ls-1-7: 1.7em;
+$ls-1-8: 1.8em;
+$ls-1-9: 1.9em;
+$ls-2-0: 2.0em;
+
+
+//------------------------------
+// Fonts
+//------------------------------
+$f-sans: sans-serif;
+
+//------------------------------
+// Shadow
+//------------------------------
+$bs-main: 0px 0px 60px 0px rgba(0, 0, 0, 0.25);

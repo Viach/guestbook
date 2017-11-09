@@ -1,0 +1,16 @@
+// menu styles
+.menu {
+  margin-top: 22px;
+  &__item {
+    border-radius: 10px;
+    display: inline-block;
+    background: $c-dark;
+    color: $c-white;
+    padding: 20px;
+    &--active {
+      background: $c-white;
+      color: $c-dark;
+      pointer-events: none;
+    }
+  }
+}
