@@ -4,7 +4,8 @@ mixin section-book(spec)
 
   .section-book(class=spec.__class)&attributes(attributes)
     h2.section-book__title Guest Book
-    .section-book__buttons
-      +button({__class:'section-book__button', type:'text', text: 'Show All' })
-      +button({__class:'section-book__button', type:'text', text: 'Add Guest' })
-    +book({__class:'section-book__book'})
+    .section-book__content
+      .section-book__buttons.col-12
+        +button({__class:'section-book__button button--green', type:'text', text: 'Show All' })
+        +button({__class:'section-book__button button--blue', type:'text', text: 'Add Guest' })
+      +book({__class:'section-book__book col-12'})

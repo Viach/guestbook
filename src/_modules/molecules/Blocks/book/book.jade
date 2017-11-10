@@ -2,5 +2,18 @@ mixin book(spec)
   - spec = spec || {}
   - spec.__class = spec.__class || ''
 
-  div(class=spec.__class)&attributes(attributes)
-    p This is an example paragraph for the book module
+  table.book(class=spec.__class)&attributes(attributes)
+    thead
+      tr.row
+        th.book__id.col-3 ID
+        th.book__name.col-6 Name
+        th.col-2
+    tbody
+      tr.row(v-for="book in books")
+        td.book__id.col-3 {{book.id}}
+        td.book__name.col-6 {{book.name}}
+        td.book__buttons.col-3
+          +button({__class:'book__button button--green', type:'icon', icon:'eye'})
+          +button({__class:'book__button button--yellow', type:'icon', icon:'edit'})
+          +button({__class:'book__button button--red', type:'icon', icon:'delete'})
+        

@@ -1,0 +1,12 @@
+{
+  "guest":[
+    {
+      "id": 1,
+      "name": "stas"
+    },
+    {
+      "id": 2,
+      "name": "vova"
+    }
+  ]
+}
